@@ -8,7 +8,7 @@ function App() {
 
         setCookieCount((prev) => prev + 1);
         setMoneyCount((prev) => prev - 5);
-        if (moneyCount == 0) {
+        if (moneyCount = 0) {
             alert("You don't have enough money!");
         }
     }
