@@ -19,25 +19,30 @@ function buyCookie() {
     });
 }
 
-    function sellCookie() {
-        const cookies = Number(prompt("How much cookies would you like to sell?"));
+function sellCookie() {
+    const cookies = Number(prompt("How many cookies would you like to sell?"));
 
-        if (cookies > cookieCount) {
-            alert("You don't have enough cookies!");
-            return;
-        }
-
-        const price = Number(prompt("How much money would you like to sell them for?"));
-
-        const earnings = cookies * 5;
-        const tax = earnings * taxRate;
-        const finalMoney = earnings - tax;
-
-        setCookieCount((prev) => prev - cookies);
-        setMoneyCount((prev) => prev + finalMoney);
-
-        alert(`You've earned $${finalMoney} after taxes.`)
+    // Validate input
+    if (isNaN(cookies) || cookies <= 0) {
+        alert("Enter a valid number.");
+        return;
     }
+
+    if (cookies > cookieCount) {
+        alert("You don't have enough cookies!");
+        return;
+    }
+
+    const earnings = cookies * 5;
+    const tax = earnings * taxRate;
+    const finalMoney = earnings - tax;
+
+    setCookieCount(prev => prev - cookies);
+    setMoneyCount(prev => prev + finalMoney);
+
+    alert(`You've earned $${finalMoney} after taxes.`);
+}
+
 
     return(
         <>
