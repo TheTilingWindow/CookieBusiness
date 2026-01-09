@@ -1,0 +1,15 @@
+body {
+    background-color: #242424;
+    color: #ffffff;
+}
+
+.clickerbutton {
+    margin: 10px;
+}
+
+.leaderboard {
+    position: absolute;
+    top: 0;
+    left: 5;
+    font-size: 20px;
+}
