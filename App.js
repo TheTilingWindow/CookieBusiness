@@ -4,17 +4,20 @@ function App() {
     const [moneyCount, setMoneyCount] = useState(1000);
     const [taxRate, setTaxRate] = useState(0.10)
 
-    function buyCookie() {
-        const cost = 5;
+function buyCookie() {
+    const cost = 5;
 
-        if (moneyCount < cost) {
+    setMoneyCount(prevMoney => {
+        if (prevMoney < cost) {
             alert("You don't have enough money!");
-            return;
+            return prevMoney; // do NOT subtract
         }
 
-        setCookieCount((prev) => prev + 1);
-        setMoneyCount((prev) => prev - cost);
-    }
+        // If enough money, complete the purchase
+        setCookieCount(prev => prev + 1);
+        return prevMoney - cost;
+    });
+}
 
     function sellCookie() {
         const cookies = Number(prompt("How much cookies would you like to sell?"));
