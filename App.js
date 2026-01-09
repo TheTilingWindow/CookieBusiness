@@ -5,12 +5,15 @@ function App() {
     const [taxRate, setTaxRate] = useState(0.10)
 
     function buyCookie() {
+        const cost = 5;
+
+        if (moneyCount < cost) {
+            alert("You don't have enough money!");
+            return;
+        }
 
         setCookieCount((prev) => prev + 1);
-        setMoneyCount((prev) => prev - 5);
-        if (moneyCount < 0) {
-            alert("You don't have enough money!")
-        }
+        setMoneyCount((prev) => prev - cost);
     }
 
     function sellCookie() {
