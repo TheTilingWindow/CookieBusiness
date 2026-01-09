@@ -23,3 +23,7 @@
     transition: border-color 0.25s;
     color: white;
 }
+
+.clickerbutton:hover {
+  border-color: #535bf2;
+}
