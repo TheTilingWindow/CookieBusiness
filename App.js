@@ -31,7 +31,7 @@ function App() {
 
     return(
         <>
-        <h1>Cookie Game</h1>
+        <h1>Cookie Business</h1>
         <p>There are {cookieCount} cookies</p>
         <p>Cookie price is $5</p>
         <button onClick={buyCookie} className="clickerbutton">Buy cookies</button>
